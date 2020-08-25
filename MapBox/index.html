@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
@@ -30,6 +31,7 @@
 	</div>
 	<script src="canvasChange.js"></script>
 	<script>
+		// https://github.com/geolonia/mbgl-export-control/blob/master/src/index.js
 		// TO MAKE THE MAP APPEAR YOU MUST
 		// ADD YOUR ACCESS TOKEN FROM
 		// https://account.mapbox.com
@@ -95,8 +97,11 @@
 			);
 		});
 		setTimeout(function(){
+			console.log("setTimeouting");
 			var div = document.getElementById("mapShot");
-			div.append(dataURLToImage(map.getCanvas().toDataURL()));
+			var can = dataURLToImage(map.getCanvas().toDataURL("image/png"));
+			console.log(can);
+			div.append(can);
 		}, 5000)
 		
 	</script>
