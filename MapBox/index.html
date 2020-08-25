@@ -26,7 +26,7 @@
 	<div id="map" style="height:500px;"></div>
 	<div>
 		<button onclick="clickMapShot()">点击获取</button>
-		<div id="mapShot" style="border:1px solid red;"></div>
+		<div id="mapShot" style="border:1px solid red; height: 300px;">Helloworld</div>
 	</div>
 	<script src="canvasChange.js"></script>
 	<script>
@@ -94,10 +94,11 @@
 				labelLayerId
 			);
 		});
-
-		var div = document.getElementById("mapShot");
-		div.append(dataURLToImage(map.getCanvas().toDataURL()));
-
+		setTimeout(function(){
+			var div = document.getElementById("mapShot");
+			div.append(dataURLToImage(map.getCanvas().toDataURL()));
+		}, 5000)
+		
 	</script>
 
 </body>
